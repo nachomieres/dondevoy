@@ -3,18 +3,18 @@ dondeVoy
 
 ## Uso del proyecto:
 
-You'll need the Ionic CLI with support for v2 apps:
+Se necesita el CLI de Ionic con soporte para aplicaciones de la version 2:
 
 ```bash
 $ npm install -g ionic
 ```
 
-Then run:
+y despues:
 
 ```bash
 $ ionic start dondevoy https://github.com/nachomieres/dondevoy --v2
 ```
-se necesita añadir Firebase:
+Una vez dentro de la carpeta del proyecto, se necesita añadir Firebase:
 
 ```bash
 $ npm install firebase --save
