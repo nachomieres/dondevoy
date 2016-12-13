@@ -1,9 +1,7 @@
-Ionic 2 App Base
+dondeVoy
 =====================
 
-This is the base template for Ionic 2 starter apps.
-
-## Using this project
+## Uso del proyecto:
 
 You'll need the Ionic CLI with support for v2 apps:
 
@@ -14,7 +12,16 @@ $ npm install -g ionic
 Then run:
 
 ```bash
-$ ionic start myApp
+$ ionic start dondevoy https://github.com/nachomieres/dondevoy --v2
+```
+se necesita añadir Firebase:
+
+```bash
+$ npm install firebase --save
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+y el plugin de BackgroundGeolocation:
+
+```bash
+$ ionic plugin add cordova-plugin-mauron85-background-geolocation
+```
