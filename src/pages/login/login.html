@@ -1,0 +1,47 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding scroll="false">
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://www.nachosoft.esy.es/dondevas/assets/images/logo.png" height="100px"/>
+      <h2>dondeVoy</h2>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <ion-row wrap>
+    <ion-col></ion-col>
+    <ion-col width-80>
+      <form [formGroup]="loginForm" (submit)="login()" novalidate>
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
+         [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label stacked>Password</ion-label>
+         <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
+         [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
+       </ion-item>
+       <button ion-button margin-top large block type="submit">Entrar</button>
+       <button ion-button margin-top block clear (click)="goToSignup()">
+         Crear una cuenta
+       </button>
+       <button ion-button block clear (click)="goToResetPassword()">
+         ¿Has olvidado el password?
+       </button>
+     </form>
+   </ion-col>
+   <ion-col></ion-col>
+ </ion-row>
+</ion-content>

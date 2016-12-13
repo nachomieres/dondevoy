@@ -1,0 +1,18 @@
+page-home {
+  .home-content {
+    background: url("http://www.nachosoft.esy.es/loc2.jpg") no-repeat center center fixed !important;
+  }
+  ion-row {
+     align-items: center;
+     text-align: center;
+     margin-top: 40px;
+   }
+  .home-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 0 20 auto auto;
+    box-shadow: 5px 5px 3px rgba(0,0,0,.5);
+  }
+
+}

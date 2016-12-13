@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      dondeVoy - {{user.displayName}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home-content" padding>
+  <h3 text-center>Latutud: {{locationTracker.lat}}</h3>
+  <h3 text-center>Longitud: {{locationTracker.lng}}</h3>
+  <ion-row>
+    <ion-col>
+      <button class="home-button" color="secondary" ion-button (click)="arrancaBackground()" [disabled]="guardando">Arranca</button>
+    </ion-col>
+    <ion-col>
+      <button class="home-button" color="danger" ion-button (click)="paraBackground()" [disabled]="!guardando">Para</button>
+    </ion-col>
+  </ion-row>
+  <ion-fab right bottom>
+    <button ion-fab><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-whatsapp" (click)="shareWhats()"></ion-icon></button>
+      <button ion-fab><ion-icon name="mail" (click)="shareEmail()"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
