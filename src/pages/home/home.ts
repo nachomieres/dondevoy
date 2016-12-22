@@ -63,4 +63,5 @@ export class HomePage {
       alert(msg)
     })
   }
+
 } // HomePage
