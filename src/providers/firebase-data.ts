@@ -8,9 +8,7 @@ export class FirebaseData {
   fireAuth = firebase.auth();
   ref: any;
 
-  constructor() {
-    console.log('Hello FirebaseData Provider');
-    console.log (this.fireAuth.currentUser.uid);
+  constructor() {        
     this.ref = firebase.database().ref('rutas/' + this.fireAuth.currentUser.uid);
     this.ref.set (null);
   }

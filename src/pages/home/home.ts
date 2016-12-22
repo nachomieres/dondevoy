@@ -44,13 +44,23 @@ export class HomePage {
       this.navCtrl.setRoot(LoginPage);
     });
   }
-
-  shareWhats () {
-    SocialSharing.shareViaWhatsApp ('Sigue mi ruta en:', null, 'http://www.nachosoft.esy.es/dondevas/');
+  shareWhats(){
+    SocialSharing.shareViaWhatsApp("Estoy guardando una ruta, puedes seguirla en:", null /*Image*/,
+                                    "https://nachomieres.github.io/dondevasweb" /* url */)
+      .then(()=>{
+      },
+      (msg)=>{
+         alert(msg)
+      })
   }
 
   shareEmail () {
-    SocialSharing.shareViaEmail('Entra en http://www.nachosoft.esy.es/dondevas para ver mi ruta','Sigue mi ruta', null);
+    SocialSharing.shareViaEmail("Puedes seguirla en https://nachomieres.github.io/dondevasweb",
+                                'Estoy guardando una ruta', null)
+    .then(()=>{
+    },
+    (msg)=>{
+      alert(msg)
+    })
   }
-
 } // HomePage

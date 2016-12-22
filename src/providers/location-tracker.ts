@@ -8,7 +8,6 @@ export class LocationTracker {
 
   public lat: number = 0;
   public lng: number = 0;
-  public time: number = 0;
 
   constructor(public zone: NgZone, public firebaseData: FirebaseData) {
   }
@@ -16,20 +15,25 @@ export class LocationTracker {
   startTracking() {
     // Background Tracking
     let config = {
-      desiredAccuracy:10,
+      // comun
+      desiredAccuracy: 0,
       stationaryRadius: 20,
-      distanceFilter: 30,
+      distanceFilter: 5,
       maxLocations: 1000,
-
-      // Android only section
+      interval: 2000,
+      stopOnTerminate: true,
+      // Android
       startForeground:true,
       locationProvider: 1,
-      interval: 2000,
       fastestInterval: 2000,
       activitiesInterval: 10000,
       notificationTitle: 'dondeVoy',
       notificationText: 'Guardando ruta...',
-      notificationIconColor: '#387ef5'
+      notificationIconColor: '#387ef5',
+      // iOS
+      pauseLocationUpdates: false,
+      saveBatteryOnBackground: false,
+      activityType: 'OtherNavigation'
     };
     BackgroundGeolocation.configure((location) => {
       console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);

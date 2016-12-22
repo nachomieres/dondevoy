@@ -10,16 +10,15 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 <ion-content class="home-content" padding>
   <h3 text-center>Latutud: {{locationTracker.lat}}</h3>
   <h3 text-center>Longitud: {{locationTracker.lng}}</h3>
   <ion-row>
     <ion-col>
-      <button class="home-button" color="secondary" ion-button (click)="arrancaBackground()" [disabled]="guardando">Arranca</button>
+      <button class="home-button" color="secondary" ion-button (click)="arrancaBackground()" [disabled]="guardando">Iniciar</button>
     </ion-col>
     <ion-col>
-      <button class="home-button" color="danger" ion-button (click)="paraBackground()" [disabled]="!guardando">Para</button>
+      <button class="home-button" color="danger" ion-button (click)="paraBackground()" [disabled]="!guardando">Parar</button>
     </ion-col>
   </ion-row>
   <ion-fab right bottom>
